@@ -47,7 +47,7 @@ TODO
 
 > Please execute following playbooks in order.
 
-General ansible execution format is 
+General ansible execution format is
 `ansible-playbook -i inventory/sample_env/hosts <playbook.yml>`
 
 1.  lp_cassandra_provision.yml
@@ -70,13 +70,3 @@ General ansible execution format is
 18.  lp_yarn_provision.yml
 19.  lp_samza_deploy.yml
 20.  lp_samza_telemetry_schemas.yml
-
-
-
-
-
-
-
-
-
-
