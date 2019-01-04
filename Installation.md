@@ -1,4 +1,4 @@
-Installation steps for Data Pipeline Infrastructure
+Installation steps for Learning Platform Infrastructure
 -
 
 Sunbird Learning Platform installation is automated with ansible as configuration management tool.
