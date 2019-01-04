@@ -26,14 +26,14 @@ You can override that in group_vars though.
 
 **Instances Required**
 
-learning and redis - 1 (2 cpu, 8GB Memory)
-Search - 1 ( 2 cpu, 4GB Memory)
-Neo4j - 1 (2 cpu, 8GB Memory)
-cassandra - 1 ( 2 cpu, 4GB Memory)
-elasticsearch(CompositeSearch) - 1 ( 2 cpu, 4GB Memory)
-kafka and zookeeper - 1 (2 cpu, 8GB Memory)
-yarn-master - 1 (2 cpu, 8GB Memory)
-yarn-slave - 3 (2 cpu, 8GB Memory)
+1. learning and redis - 1 (2 cpu, 8GB Memory)
+2. Search - 1 ( 2 cpu, 4GB Memory)
+3. Neo4j - 1 (2 cpu, 8GB Memory)
+4. cassandra - 1 ( 2 cpu, 4GB Memory)
+5. elasticsearch(CompositeSearch) - 1 ( 2 cpu, 4GB Memory)
+6. kafka and zookeeper - 1 (2 cpu, 8GB Memory)
+7. yarn-master - 1 (2 cpu, 8GB Memory)
+8. yarn-slave - 3 (2 cpu, 8GB Memory)
 
 
 ### Components in LP
