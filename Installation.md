@@ -24,6 +24,18 @@ You can override that in group_vars though.
 
 - [ansible v2.5.0](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip)
 
+**Instances Required**
+
+learning and redis - 1 (2 cpu, 8GB Memory)
+Search - 1 ( 2 cpu, 4GB Memory)
+Neo4j - 1 (2 cpu, 8GB Memory)
+cassandra - 1 ( 2 cpu, 4GB Memory)
+elasticsearch(CompositeSearch) - 1 ( 2 cpu, 4GB Memory)
+kafka and zookeeper - 1 (2 cpu, 8GB Memory)
+yarn-master - 1 (2 cpu, 8GB Memory)
+yarn-slave - 3 (2 cpu, 8GB Memory)
+
+
 ### Components in LP
 
 1. Database
