@@ -30,5 +30,33 @@ General ansible execute format is
 
 `ansible-playbook -i inventory/sample_env/hosts <playbook.yml>`
 
-- cassandra.yml
-- 
+- lp_cassandra_provision.yml
+- es_composite_search_cluster_setup.yml
+- lp_learning_neo4j_provision.yml
+- lp_learning_provision.yml
+- lp_redis_provision.yml
+- lp_search_provision.yml
+- lp_cassandra_db_update.yml
+- lp_learning_neo4j_deploy.yml
+- lp_start_neo4j.yml
+- lp_zookeeper_provision.yml
+- lp_kafka_provision.yml
+- lp_kafka_setup.yml
+- lp_learning_deploy.yml
+- lp_logstash_deploy.yml --extra-vars "remote=learningall"
+- lp_search_deploy.yml
+- lp_synctool_deploy.yml
+- lp_logstash_deploy.yml --extra-vars "remote=searchall"
+- lp_yarn_provision.yml
+- lp_samza_deploy.yml
+- lp_samza_telemetry_schemas.yml
+
+
+
+
+
+
+
+
+
+
