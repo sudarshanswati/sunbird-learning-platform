@@ -20,13 +20,30 @@ Above depicts the folder structure for ansible code distribution.
 All the variables which can have default values, for example **cassandra_ip_address** is dynamically derived or constant values assigned and added in to defaults.
 You can override that in group_vars though.
 
-### Variables
+### Components in LP
+
+1. Database
+    - Cassandra
+    - Neo4j
+    - ElasticSearch
+    - Redis
+2. Event processors
+    - Kafka
+    - Yarn
+3. Services
+    - Learning
+    - Search
+
+
+### Variable Description
 
 TODO
 
-### Playbooks to run in order
+### Installing LP
 
-General ansible execute format is 
+Please run following playbooks in order.
+
+General ansible execution format is 
 
 `ansible-playbook -i inventory/sample_env/hosts <playbook.yml>`
 
