@@ -53,6 +53,9 @@ lp-yarn-slave
 [processing-cluster-zookeepers]
 #zookeeper_ip_1
 
+[zookeeper:children]
+processing-cluster-zookeepers
+
 [lp:children]
 learningall
 searchall
@@ -62,7 +65,7 @@ redisall
 lp-yarn
 composite-search-cluster
 processing-cluster-kafka
-processing-cluster-zookeepers
+zookeeper
 
 [lp:vars]
 ansible_ssh_user="{{ssh_ansible_user}}"
