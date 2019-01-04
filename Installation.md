@@ -20,6 +20,10 @@ Above depicts the folder structure for ansible code distribution.
 All the variables which can have default values, for example **cassandra_ip_address** is dynamically derived or constant values assigned and added in to defaults.
 You can override that in group_vars though.
 
+### Prerequisites
+
+- [ansible v2.5.0](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip)
+
 ### Components in LP
 
 1. Database
