@@ -53,7 +53,15 @@ You can override that in group_vars though.
 
 ### Variable Description
 
-TODO
+Mandatory variables to update
+
+| Variable | Definition |
+| --- | --- |
+| env | Denotes the environement, for example dev, staging |
+| azure_storage_secret | Azure storage secret for blob |
+| azure_public_container | Azure container name to store contents |
+| azure_account_name | Azure storage account name for storage |
+| azure_account_key | Azure storage key |
 
 ### Installing LP
 
