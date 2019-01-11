@@ -63,6 +63,8 @@ Mandatory variables to update
 | azure_account_name | Azure storage account name for storage |
 | azure_account_key | Azure storage key |
 
+> All values start with `vault_` in group_vars are passwords/keys you'll have to update
+
 ### Installing LP
 
 > Please execute following playbooks in order.
