@@ -87,8 +87,8 @@ General ansible execution format is
 13.  lp_learning_deploy.yml
 14.  lp_logstash_deploy.yml --extra-vars "remote=learningall"
 15.  lp_search_deploy.yml
-16.  lp_synctool_deploy.yml
-17.  lp_logstash_deploy.yml --extra-vars "remote=searchall"
+16.  lp_logstash_deploy.yml --extra-vars "remote=searchall"
+17.  lp_synctool_deploy.yml
 18.  lp_yarn_provision.yml
-19.  lp_samza_deploy.yml
-20.  lp_samza_telemetry_schemas.yml
+19.  lp_samza_telemetry_schemas.yml
+20.  lp_samza_deploy.yml
