@@ -11,3 +11,12 @@ es_router_additional_secondary_config: "{{object_denormalization_additional_conf
 hierarchy_keyspace_name: "{{env}}_hierarchy_store"
 cloud_upload_retry_count: 3
 streaming_mime_type: "video/mp4,video/webm"
+__yarn_port__: 8000
+delayInMilliSeconds: 60000
+retryTimeInMilliSeconds: 10000
+retry_backoff_base_in_seconds: 10
+bypass_reverse_search: true
+retry_limit: 4
+retry_limit_enable: true
+publish_pipeline_container_count: 1
+publish_yarn_container_memory_mb: 1024
