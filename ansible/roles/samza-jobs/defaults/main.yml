@@ -20,3 +20,4 @@ retry_limit: 4
 retry_limit_enable: true
 publish_pipeline_container_count: 1
 publish_yarn_container_memory_mb: 1024
+mw_shard_id: 1
