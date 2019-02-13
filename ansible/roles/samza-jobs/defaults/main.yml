@@ -9,3 +9,4 @@ es_router_additional_secondary_config: "{{object_denormalization_additional_conf
 # lpdeploy: no
 # dpdeploy: no
 hierarchy_keyspace_name: "{{env}}_hierarchy_store"
+cloud_upload_retry_count: 3
