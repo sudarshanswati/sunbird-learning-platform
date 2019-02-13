@@ -10,3 +10,4 @@ es_router_additional_secondary_config: "{{object_denormalization_additional_conf
 # dpdeploy: no
 hierarchy_keyspace_name: "{{env}}_hierarchy_store"
 cloud_upload_retry_count: 3
+streaming_mime_type: "video/mp4,video/webm"
