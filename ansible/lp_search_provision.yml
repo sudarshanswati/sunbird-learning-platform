@@ -1,4 +1,7 @@
 - hosts: searchall
+  vars:
+    searchs:
+      paths: ['/data', '/data/logs', '/data/contentBundle', '/data/properties', '/home/learning/tmp', '/home/learning/platform', '/home/learning/platform/search', '/home/learning/platform/service', '/home/learning/platform/service/logs' ]
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   pre_tasks:
