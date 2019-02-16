@@ -1,6 +1,8 @@
 ---
 - name: "Start Nodemanager on Slaves"
   hosts: "yarn-slave"
+  vars:
+    hadoop_version: 2.7.2
   vars_files:
     - "{{inventory_dir}}/secrets.yml"
   become: yes
