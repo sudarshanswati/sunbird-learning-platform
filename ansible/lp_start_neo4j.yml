@@ -6,7 +6,7 @@
       become_user: "{{ learner_user }}"
       shell: ps -ef | grep "{{ neo4j_home }}"  | grep -v grep | wc -l
       register: neo4j_process
-
+      
     - name: Start neo4j
       become: yes
       become_user: "{{ learner_user }}"
