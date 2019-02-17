@@ -13,14 +13,10 @@ redis_host: "{{ groups['learning1'][0] }}"
 redis_port: 6379
 cassandra_host: "{{ groups['cassandra'][0] }}"   
 cassandra_port: 9042
-content_keyspace_name: "{{env}}_content_store"
-hierarchy_keyspace_name: "{{env}}_hierarchy_store"
-orchestrator_keyspace_name: "{{env}}_script_store"
 content_keyspace_table: content_data
 
 environment_id: 10000000
 
-dialcode_keyspace_name: "{{env}}_dialcode_store"
 dial_es_index_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
 audit_es_index_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
 es_index_host : "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
