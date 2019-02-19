@@ -5,12 +5,6 @@
 cloud_storage_config_environment: "{{env}}"
 ansible_vault_password: "{{lp_vault_ansible_vault_password}}"
 secrets_path: '{{inventory_dir}}/group_vars/common.yml'
-
-env_name: "{{ env }}"
-instance_name: "{{sunbird_instance_name| default(env)}}"
-instance: "{{sunbird_instance| default(env) }}"
-
-
 learner_user: learning
 learner_group: learning
 learner_user_home: "/home/{{ learner_user }}"
@@ -46,7 +40,6 @@ lp_bolt_read_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:7687
 lp_bolt_write_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:7687
 lp_url: http://{{ groups['learningall'][0] }}:8080/learning-service
 lp_tmpfile_location: /tmp
-language_url: http://{{ groups['learningall'][0] }}:8080/language-service
 other_bolt_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:8687
 other_bolt_read_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:8687
 other_bolt_write_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:8687
@@ -54,7 +47,6 @@ other_bolt_write_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:8687
 
 lp_cassandra_connection: "{{groups['cassandra']|join(':9042,')}}:9042"
 
-cassandra_host:  "{{ groups['cassandra'][0] }}"
 redis_host: "{{ groups['redis1'][0] }}"
 kafka_brokers: "{{groups['processing-cluster-kafka']|join(':9092,')}}:9092"
 zookeepers: "{{groups['processing-cluster-zookeepers']|join(':2181,')}}:2181"
