@@ -7,9 +7,8 @@ ansible_vault_password: "{{lp_vault_ansible_vault_password}}"
 secrets_path: '{{inventory_dir}}/group_vars/common.yml'
 
 env_name: "{{ env }}"
-instance_name: "{{sunbird_instance_name| default(env)}}"
-instance: "{{sunbird_instance| default(env) }}"
-
+instance_name: "{{ env }}"
+instance: "{{ env }}"
 
 learner_user: learning
 learner_group: learning
