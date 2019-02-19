@@ -29,9 +29,6 @@ search_service_endpoint: "{{ekstep_domain_name}}/api/search/v2/search"
 
 ## learning service variables
 plugin_media_base_url: "{{ekstep_domain_name}}"
-graph_passport_key: "{{ lp_vault_graph_passport_key }}"
-azure_storage_secret: "{{lp_vault_azure_storage_secret}}"
-azure_account_key: "{{lp_vault_azure_storage_secret}}"
 content_media_base_url: "{{proto}}://{{domain_name}}"      # content_media_base_url
 dial_service_search_url: "{{ekstep_domain_name}}/api/dialcode/v3/search"   # dial_service_search_url
 resourcemanager: "{{ groups['yarn-master'][0] }}"
@@ -51,12 +48,17 @@ other_bolt_write_url: bolt://{{ groups['learning-neo4j-cluster'][0] }}:8687
 
 
 lp_cassandra_connection: "{{groups['cassandra']|join(':9042,')}}:9042"
-
+cassandra_host: "{{ groups['cassandra'][0] }}"
 redis_host: "{{ groups['redis1'][0] }}"
 kafka_brokers: "{{groups['processing-cluster-kafka']|join(':9092,')}}:9092"
 zookeepers: "{{groups['processing-cluster-zookeepers']|join(':2181,')}}:2181"
 audit_es_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
 search_es_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
 
-#Backup Container
-default_channel: "{{default_org_hash_id}}"
+azure_account_key: "{{lp_vault_azure_storage_secret}}"
+azure_storage_secret: "{{lp_vault_azure_storage_secret}}"
+graph_passport_key: "{{ lp_vault_graph_passport_key }}"
+dial_service_authorization: "{{ lp_vault_dial_service_authorization }}"
+youtube_api_key: "{{ lp_vault_youtube_api_key }}"
+
+

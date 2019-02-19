@@ -11,7 +11,6 @@ instance_name: sunbird
 
 redis_host: "{{ groups['learning1'][0] }}"
 redis_port: 6379
-cassandra_host: "{{ groups['cassandra'][0] }}"   
 cassandra_port: 9042
 content_keyspace_table: content_data
 
@@ -32,17 +31,13 @@ kafka_topics_instruction: "{{env}}.learning.job.request"
 object_bookmark_expiry_in_seconds: 15
 platform_api_url: "http://{{ groups['learning1'][0] }}:8080/learning-service"
  
-graph_passport_key: "{{ lp_vault_graph_passport_key }}"
-dial_service_authorization: "{{ lp_vault_dial_service_authorization }}"
 language_service_url: language_url
 youtube_app_name: fetch-youtube-license
-youtube_api_key: "{{ lp_vault_youtube_api_key }}"
  
 
 cloud_store: azure
 azure_public_container: 
 azure_account_name: 
-azure_account_key: "{{ lp_vault_azure_storage_secret }}"
 
 content_media_base_url:  
 plugin_media_base_url: 
