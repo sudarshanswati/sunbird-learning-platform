@@ -5,6 +5,11 @@
 cloud_storage_config_environment: "{{env}}"
 ansible_vault_password: "{{lp_vault_ansible_vault_password}}"
 secrets_path: '{{inventory_dir}}/group_vars/common.yml'
+
+env_name: "{{ env }}"
+instance_name: "{{ env }}"
+instance: "{{ env }}"
+
 learner_user: learning
 learner_group: learning
 learner_user_home: "/home/{{ learner_user }}"
