@@ -31,7 +31,7 @@ kafka_topics_instruction: "{{env}}.learning.job.request"
 object_bookmark_expiry_in_seconds: 15
 platform_api_url: "http://{{ groups['learning1'][0] }}:8080/learning-service"
  
-language_service_url: language_url
+#language_service_url: language_url
 youtube_app_name: fetch-youtube-license
  
 
