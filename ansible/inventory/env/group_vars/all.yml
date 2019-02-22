@@ -27,6 +27,8 @@ core_cassandra_connection: "{{ groups['core-cassandra'][0] }}:9042"
 dial_service_generate_url: "{{ekstep_domain_name}}/api/dialcode/v3/generate"
 search_service_endpoint: "{{ekstep_domain_name}}/api/search/v2/search"
 
+environment_id: 10000000
+
 ## learning service variables
 plugin_media_base_url: "{{ekstep_domain_name}}"
 content_media_base_url: "{{proto}}://{{domain_name}}"      # content_media_base_url
