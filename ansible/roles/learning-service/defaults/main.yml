@@ -6,15 +6,15 @@ tomcat_minor_version: 0.36
 tomcat_home: "{{learner_user_home}}/apache-tomcat-{{tomcat_major_version}}.{{tomcat_minor_version}}"
 learner_service_url: "{{inventory_hostname}}:8080"
 
-instance: "{{env}}"
-instance_name: sunbird
+#instance: "{{env}}"
+#instance_name: sunbird
 
 redis_host: "{{ groups['learning1'][0] }}"
 redis_port: 6379
 cassandra_port: 9042
 content_keyspace_table: content_data
 
-environment_id: 10000000
+#environment_id: 10000000
 
 dial_es_index_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
 audit_es_index_host: "{{ groups['composite-search-cluster']|join(':9200,')}}:9200"
