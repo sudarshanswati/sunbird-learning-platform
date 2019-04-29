@@ -84,40 +84,41 @@ public class FrameworkManagerImpl extends BaseFrameworkManager implements IFrame
 	@SuppressWarnings("unchecked")
 	@Override
 	public Response readFramework(String frameworkId, List<String> returnCategories) throws Exception {
-		Response response = new Response();
-		Map<String, Object> responseMap = new HashMap<String, Object>();
 
-		String frameworkStr = RedisStoreUtil.get(frameworkId);
-		Map<String, Object> framework = new HashMap<String, Object>();
-		if (StringUtils.isNotBlank(frameworkStr)) {
-			framework = mapper.readValue(frameworkStr, Map.class);
-		} else { // if not available in redis
-			Response getHierarchyResp = getFrameworkHierarchy(frameworkId);
-			framework = (Map<String, Object>) getHierarchyResp.get("framework");
-		}
+		Response response = getCachedFramework(frameworkId, returnCategories);
 
-		if (MapUtils.isNotEmpty(framework)) {
-			// filtering based on requested categories.
-			filterFrameworkCategories(framework, returnCategories);
-
-			responseMap.putAll(framework);
-			response.put(FrameworkEnum.framework.name(), responseMap);
-			response.setParams(getSucessStatus());
+		if (null != response) {
+			return response;
 		} else {
-			if (StringUtils.isBlank(frameworkStr)) {
-				response = read(frameworkId, FRAMEWORK_OBJECT_TYPE, FrameworkEnum.framework.name());
-				framework = (Map<String, Object>) response.getResult().get("framework");
-			} else {
-				response = OK();
+			Response hierarchyResponse = getFrameworkHierarchy(frameworkId);
+			Map<String, Object> framework = (Map<String, Object>) hierarchyResponse.get("framework");
+			if (MapUtils.isNotEmpty(framework)) {
+				// filtering based on requested categories.
+				filterFrameworkCategories(framework, returnCategories);
 				response.put(FrameworkEnum.framework.name(), framework);
+				response.setParams(getSucessStatus());
+			} else {
+				response = read(frameworkId, FRAMEWORK_OBJECT_TYPE, FrameworkEnum.framework.name());
 			}
+			if (StringUtils.equalsIgnoreCase(ResponseCode.OK.name(), response.getResponseCode().name())) {
+				RedisStoreUtil.saveData(frameworkId, framework, frameworkTtl);
+			}
+			return response;
 		}
+	}
 
-		//saving data in redis
-		if (StringUtils.isBlank(frameworkStr))
-			RedisStoreUtil.saveData(frameworkId, framework, frameworkTtl);
-
-		return response;
+	private Response getCachedFramework(String id, List<String> categoryNames) throws Exception {
+		String frameworkCache = RedisStoreUtil.get(id);
+		if (StringUtils.isNotBlank(frameworkCache)) {
+			Map<String, Object> framework = mapper.readValue(frameworkCache, Map.class);
+			filterFrameworkCategories(framework, categoryNames);
+			Response response = new Response();
+			response.put(FrameworkEnum.framework.name(), framework);
+			response.setParams(getSucessStatus());
+			return response;
+		} else {
+			return null;
+		}
 	}
 
 	/*
